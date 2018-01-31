@@ -32,7 +32,6 @@
 
 - [wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
 
-- [donate](https://panjiachen.github.io/vue-element-admin-site/#/donate)
 
 **本项目的定位是后台集成方案，不适合当基础模板来开发。**
  - 模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
@@ -152,12 +151,6 @@ Detailed changes for each release are documented in the [release notes](https://
 
 ## Online Demo
 [在线 Demo](http://panjiachen.github.io/vue-element-admin)
-
-## Donate
-如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :tropical_drink:
-![donate](https://panjiachen.github.io/donate/donation.png)
-
-[Paypal Me](https://www.paypal.me/panfree23)
 
 ## License
 
