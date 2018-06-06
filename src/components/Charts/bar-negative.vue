@@ -4,6 +4,7 @@
 
 <script>
 import echarts from 'echarts'
+import { price_distribute } from '@/api/article'
 
 export default {
   props: {
@@ -43,84 +44,73 @@ export default {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id))
 
-      var yAxisData = []
-      var data1 = []
-      var data2 = []
+      price_distribute({}).then(response => {
+        var result = response.data
 
-      var result = {
-        '14': {
-          'buy': 100,
-          'sale': 100
-        },
-        '15': {
-          'buy': 300,
-          'sale': 400
-        },
-        '16': {
-          'buy': 200,
-          'sale': 200
+        var yAxisData = []
+        var data1 = []
+        var data2 = []
+
+        for (var price in result) {
+          yAxisData.push(result[price].price)
+          data1.push(result[price].buy)
+          data2.push(-result[price].sale)
         }
-      }
 
-      for (var price in result) {
-        yAxisData.push(price)
-        data1.push(result[price].buy)
-        data2.push(-result[price].sale)
-      }
-
-      this.chart.setOption({
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        legend: {
-          data: ['支出', '收入']
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'value'
-          }
-        ],
-        yAxis: [
-          {
-            type: 'category',
-            axisTick: { show: false },
-            data: yAxisData
-          }
-        ],
-        series: [
-          {
-            name: '收入',
-            type: 'bar',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true
-              }
-            },
-            data: data1
+        this.chart.setOption({
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
           },
-          {
-            name: '支出',
-            type: 'bar',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'inside'
-              }
+          legend: {
+            data: ['支出', '收入']
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          yAxis: [
+            {
+              type: 'category',
+              axisTick: { show: false },
+              data: yAxisData
+            }
+          ],
+          series: [
+            {
+              name: '收入',
+              type: 'bar',
+              stack: '总量',
+              label: {
+                normal: {
+                  show: true
+                }
+              },
+              data: data1
             },
-            data: data2
-          }
-        ]
+            {
+              name: '支出',
+              type: 'bar',
+              stack: '总量',
+              label: {
+                normal: {
+                  show: true,
+                  position: 'inside'
+                }
+              },
+              data: data2
+            }
+          ]
+        })
       })
     }
   }
