@@ -4,7 +4,7 @@
 
 <script>
 import echarts from 'echarts'
-import { price_distribute } from '@/api/article'
+import { price_distribute } from '@/api/price_distribute'
 
 export default {
   props: {
