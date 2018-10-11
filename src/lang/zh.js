@@ -1,5 +1,8 @@
 export default {
   route: {
+    price_distribute: '价格分布',
+    deal: '历史成交',
+
     dashboard: '首页',
     introduction: '简述',
     documentation: '文档',
@@ -82,6 +85,9 @@ export default {
     imageUploadTips: '由于我在使用时它只有vue@1版本，而且和mockjs不兼容，所以自己改造了一下，如果大家要使用的话，优先还是使用官方版本。'
   },
   table: {
+    stock_code: '证券代码',
+    status: '状态',
+
     dynamicTips1: '固定表头, 按照表头顺序排序',
     dynamicTips2: '不固定表头, 按照点击顺序排序',
     dragTips1: '默认顺序',
@@ -98,7 +104,6 @@ export default {
     date: '时间',
     author: '作者',
     readings: '阅读数',
-    status: '状态',
     actions: '操作',
     edit: '编辑',
     publish: '发布',

@@ -1,5 +1,7 @@
 export default {
   route: {
+    price_distribute: 'Price Distribute',
+
     dashboard: 'Dashboard',
     introduction: 'Introduction',
     documentation: 'Documentation',
