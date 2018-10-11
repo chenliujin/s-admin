@@ -96,6 +96,17 @@ export default {
           series: [
             {
               name: '证券卖出',
+              type: 'bar',
+              stack: '总量',
+              label: {
+                normal: {
+                  show: true,
+                  position: 'inside'
+                }
+              },
+              data: data1
+            },
+            {
               name: '证券买入',
               type: 'bar',
               stack: '总量',
