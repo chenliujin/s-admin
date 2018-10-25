@@ -86,6 +86,8 @@ export default {
   },
   table: {
     stock_code: '证券代码',
+    start_time: '开始时间',
+    end_time: '结束时间',
     status: '状态',
 
     dynamicTips1: '固定表头, 按照表头顺序排序',

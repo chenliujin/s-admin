@@ -8,6 +8,10 @@
         </el-option>
       </el-select>
 
+      <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" :placeholder="$t('table.start_time')" v-model="listQuery.start_time"></el-input>
+
+      <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" :placeholder="$t('table.end_time')" v-model="listQuery.end_time"></el-input>
+
       <el-button class="filter-item" type="primary" v-waves icon="el-icon-search" @click="handleFilter">{{$t('table.search')}}</el-button>
     </div>
 
@@ -21,8 +25,8 @@ import waves from '@/directive/waves' // 水波纹指令
 import { price_distribute } from '@/api/price_distribute'
 
 const statusOptions = [
-  { key: '0', display_name: '未对账' },
-  { key: '1', display_name: '已对账' }
+  { key: '0', display_name: '未清算' },
+  { key: '1', display_name: '已清算' }
 ]
 
 export default {
