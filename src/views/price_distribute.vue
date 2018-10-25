@@ -82,8 +82,8 @@ export default {
 
         for (var price in result) {
           yAxisData.push(result[price].price)
-          data1.push(-result[price].sale)
-          data2.push(-result[price].buy)
+          data1.push(-result[price].S)
+          data2.push(-result[price].B)
         }
 
         this.chart.setOption({
